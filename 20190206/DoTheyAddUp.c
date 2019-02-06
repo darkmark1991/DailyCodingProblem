@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int DoTheyAddUp (int* arr, int k) {
-    size_t len = sizeof(arr);
+int DoTheyAddUp (int* arr, size_t len, int k) {
     for (int i=0; i<len; i++){
         if (arr[i] > k) continue;
         for (int j=i; j<len; j++){
@@ -14,40 +13,41 @@ int DoTheyAddUp (int* arr, int k) {
     return 0;
 }
 
-void PrintArr (int* arr) {
-    size_t len = sizeof(arr);
+void PrintArr (int* arr, size_t len) {
     for (int i=0; i<len; i++){
-    	printf("%d", arr[i]);
+    	printf("%d%s", arr[i], i != len-1 ? ", " : " ");
     }
 }
 
 int main () {
-    int k, arr[100], index = 0;
-    char arrStr[100], *token, sep[1] = ",";
+    int k, arr[100], size, index = 0, tmp;
+    char arrStr[100], *token, sep[] = ",";
     
     printf("This program takes in an array of integers and tests if two of its elements can be added to a given number K.\n");
     
+    printf("Please enter array size (max. 100): ");
+    scanf("%d", &size);
+
     printf("Please enter the array (comma separated): ");
-    scanf("%[^\n]s", arrStr);
-    
+    scanf("%s", arrStr);
+   
     printf("Please enter K: ");
     scanf("%d", &k);
 
     token = strtok(arrStr, sep);
-    while (token != NULL) {
+
+    while (token != NULL && index < size) {
     	arr[index] = strtol(token, (char**) NULL, 10);
-	printf("%s, %d\n", token, arr[index]);
 	token = strtok(NULL, sep);
 	index++;
     }
-    PrintArr(arr);
 
-/*
-    if (DoTheyAddUp(arr, 17)) {
-        printf("Two numbers in the given array add up to %d! :)\n", k);
+    if (DoTheyAddUp(arr, size, k)) {
+        printf("Two numbers in the given array [");
+        PrintArr(arr, size);
+	printf("] add up to %d! :)\n", k);
     } else {
         printf("No two numbers in the given array add up to %d. :(\n", k);
     }
     return 0;
-*/
 }
