@@ -10,6 +10,7 @@ For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
 
 
 ##### Pseudocode:
+We can do it like this:
 ```bash
     BEGIN FUNCTION (array, k)
         # Optionally filter out the members of the array
@@ -22,6 +23,21 @@ For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
         FOR value_1 IN array
             res_array[index_1] = 1            
             FOR value_2 IN array
+                IF value_1 + value_2 === k
+                    RETURN True
+        RETURN False
+    END
+```
+Or do filtering on the fly:
+```bash
+    BEGIN FUNCTION (array, k)
+        FOR (value_1, index_1) IN array
+            IF value_1 > k
+                DELETE array[index]
+            res_array[index_1] = 1            
+            FOR (value_2, index_2) IN array
+                IF value_1 > k
+                    DELETE array[index_2]
                 IF value_1 + value_2 === k
                     RETURN True
         RETURN False
