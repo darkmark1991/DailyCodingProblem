@@ -16,7 +16,7 @@ Using division:
     BEGIN
         FOR (value_1, index_1) IN array
             res_array[index_1] = 1            
-            FOR (value_2, index_2) in array
+            FOR (value_2, index_2) IN array
                 res_array[index_1] *= value_2            
             res_array[index] /= value_1
     END
@@ -26,7 +26,7 @@ w/o division:
     BEGIN
         FOR (value_1, index_1) IN array
             res_array[index_1] = 1
-            FOR (value_2, index_2) in array
+            FOR (value_2, index_2) IN array
                 IF index_1 != index_2
                     res_array[index_1] *= value_2
             res_array[index] /= value_1
