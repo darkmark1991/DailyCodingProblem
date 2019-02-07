@@ -4,7 +4,7 @@ https://www.dailycodingproblem.com/
 
 Starting from 2019-02-06 I'll try to commit daily.
 
-#####Project structure:
+##### Project structure:
 ```bash
 +-- {year}
 |   +-- {month}

@@ -1,6 +1,6 @@
-###Daily Coding Problem: Problem #2
-#####2019-02-07
-#####Problem:
+### Daily Coding Problem: Problem #2
+##### 2019-02-07
+##### Problem:
 This problem was asked by Uber.
 
 Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
@@ -10,7 +10,7 @@ For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120
 Follow-up: what if you can't use division?
 
 
-#####Pseudocode:
+##### Pseudocode:
 Using division:
 ```bash
     BEGIN
