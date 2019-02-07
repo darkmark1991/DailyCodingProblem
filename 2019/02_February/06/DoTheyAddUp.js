@@ -9,6 +9,6 @@ const DoTheyAddUp = (arr, k) => {
         }
     }
     return false;
-}
+};
 
 console.log(DoTheyAddUp([10, 15, 3, 7], 17));
