@@ -1,34 +1,48 @@
-### Daily Coding Problem: Problem #2
+### Daily Coding Problem: Problem #3
 ##### 2019-02-07
 ##### Problem:
-This problem was asked by Uber.
+This problem was asked by Google.
 
-Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
+Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.
 
-For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
+For example, given the following Node class
 
-Follow-up: what if you can't use division?
-
+```bash
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+```
+The following test should pass:
+```bash
+node = Node('root', Node('left', Node('left.left')), Node('right'))
+assert deserialize(serialize(node)).left.left.val == 'left.left'
+```
 
 ##### Pseudocode:
-Using division:
 ```bash
-    BEGIN
-        FOR (value_1, index_1) IN array
-            res_array[index_1] = 1            
-            FOR (value_2, index_2) IN array
-                res_array[index_1] *= value_2            
-            res_array[index] /= value_1
-    END
-```
-w/o division:
-```bash
-    BEGIN
-        FOR (value_1, index_1) IN array
-            res_array[index_1] = 1
-            FOR (value_2, index_2) IN array
-                IF index_1 != index_2
-                    res_array[index_1] *= value_2
-            res_array[index] /= value_1
-    END
+SERIALIZE (node)
+    IF node IS NULL_PTR
+        RETURN "NULL"
+    ELSE
+        RETURN node.val + ' ' + SERIALIZE(node.left) + ' ' + SERIALIZE(node.right)
+ENDSERIALIZE
+
+DESERIALIZE (str)
+    value = SUBSTR of str UNTIL FIRST WHITESPACE
+    IF value == 'NULL'
+        RETURN NULL_PTR
+    ELSE
+        rest = SUBSTR of str AFTER FIRST WHITESPACE
+        next = SUBSTR of rest UNTIL FIRST WHITESPACE
+        
+        res = Node(value)
+        
+        IF next == 'NULL'
+            node.right = DESERIALIZE(rest)
+        ELSE
+            node.left = DESERIALIZE(rest)
+    RETURN res
+ENDDESERIALIZE
 ```

@@ -1,45 +1,34 @@
-### Daily Coding Problem: Problem #1
+### Daily Coding Problem: Problem #2
 ##### 2019-02-06
 ##### Problem:
+This problem was asked by Uber.
 
-This problem was recently asked by Google.
+Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+Follow-up: what if you can't use division?
 
 
 ##### Pseudocode:
-We can do it like this:
+Using division:
 ```bash
-    BEGIN FUNCTION (array, k)
-        # Optionally filter out the members of the array
-        # that are greater than k by themselves
-        # to reduce the size of nested loops
-        FOR (value, index) IN array
-            IF value > k
-                DELETE array[index]
-
-        FOR value_1 IN array
-            res_array[index_1] = 1            
-            FOR value_2 IN array
-                IF value_1 + value_2 === k
-                    RETURN True
-        RETURN False
-    END
-```
-Or do filtering on the fly:
-```bash
-    BEGIN FUNCTION (array, k)
+    BEGIN
         FOR (value_1, index_1) IN array
-            IF value_1 > k
-                DELETE array[index]
             res_array[index_1] = 1            
             FOR (value_2, index_2) IN array
-                IF value_1 > k
-                    DELETE array[index_2]
-                IF value_1 + value_2 === k
-                    RETURN True
-        RETURN False
+                res_array[index_1] *= value_2            
+            res_array[index] /= value_1
+    END
+```
+w/o division:
+```bash
+    BEGIN
+        FOR (value_1, index_1) IN array
+            res_array[index_1] = 1
+            FOR (value_2, index_2) IN array
+                IF index_1 != index_2
+                    res_array[index_1] *= value_2
+            res_array[index] /= value_1
     END
 ```
