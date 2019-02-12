@@ -12,7 +12,7 @@ For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
 ##### Pseudocode:
 We can do it like this:
 ```bash
-    BEGIN FUNCTION (array, k)
+    BEGIN DoTheyAddUp (array, k)
         # Optionally filter out the members of the array
         # that are greater than k by themselves
         # to reduce the size of nested loops
@@ -30,7 +30,7 @@ We can do it like this:
 ```
 Or do filtering on the fly:
 ```bash
-    BEGIN FUNCTION (array, k)
+    BEGIN DoTheyAddUp (array, k)
         FOR (value_1, index_1) IN array
             IF value_1 > k
                 DELETE array[index]

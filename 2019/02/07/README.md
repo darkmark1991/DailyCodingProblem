@@ -22,14 +22,14 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 ##### Pseudocode:
 ```bash
-SERIALIZE (node)
+BEGIN Serialize (node)
     IF node IS NULL_PTR
         RETURN "NULL"
     ELSE
         RETURN node.val + ' ' + SERIALIZE(node.left) + ' ' + SERIALIZE(node.right)
-ENDSERIALIZE
+END
 
-DESERIALIZE (str)
+BEGIN Deserialize (str)
     value = SUBSTR of str UNTIL FIRST WHITESPACE
     IF value == 'NULL'
         RETURN NULL_PTR
@@ -44,5 +44,5 @@ DESERIALIZE (str)
         ELSE
             node.left = DESERIALIZE(rest)
     RETURN res
-ENDDESERIALIZE
+END
 ```
