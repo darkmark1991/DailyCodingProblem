@@ -12,14 +12,14 @@ You can modify the input array in-place.
 
 ##### Pseudocode:
 ```bash
-START EndMax (arr)
+BEGIN EndMax (arr)
     max = arr[0]
     FOR each elem in arr starting from second
         IF elem > max
             max = elem
 END
 
-START CountSort (arr, exp)
+BEGIN CountSort (arr, exp)
     count = Array(19){0}
     addUp = Array(19){0}
 
@@ -46,7 +46,7 @@ START CountSort (arr, exp)
                 STAY at current position for next iteration
 END
 
-START RadixSort (arr)
+BEGIN RadixSort (arr)
     max = GetMax(arr)
     exp = 1
     
@@ -59,7 +59,7 @@ END
 # and while iterating over it we compare it's positive members
 # to incrementing n (starting from one)
 # if at some point they don't match we return n
-START FindLPI (arr)
+BEGIN FindLPI (arr)
     RadixSort(arr)
     
     n = 1
