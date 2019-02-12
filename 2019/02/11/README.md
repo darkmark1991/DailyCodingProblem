@@ -8,3 +8,18 @@ Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the nu
 For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
 
 You can assume that the messages are decodable. For example, '001' is not allowed.
+
+
+##### Pseudocode:
+```bash
+BEGIN CountDecodeWays (msg)
+    ways = 1
+    
+    FOR num in msg except last two
+        IF num <= 2
+            IF next_num <= 2
+                ways *= 1.5
+            ELSE
+                ways *= 2
+END
+```
