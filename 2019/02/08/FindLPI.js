@@ -3,7 +3,7 @@ const GetMax = (arr) => {
     let max = arr[0];
     arr.forEach(a => max = a > max ? a : max );
     return max;
-}
+};
 
 const CountSort = (arr, len, exp) => {
     // initialize zero-filled array of 19 length
@@ -16,12 +16,13 @@ const CountSort = (arr, len, exp) => {
     // increment the count array at indexes that correspond
     // to the digit of a at the given exponent level
     arr.forEach(a => count[Math.floor(a/exp)%10 + 9]++);
+
     // add up counts to get positions
     addUp[0] = count[0];
     for (i = 1; i < 19; i++)
         addUp[i] += addUp[i-1] + count[i];
 
-    // do the actual sorting
+    // here do the actual sorting
     // but we'll mutate the original array to keep the space complexity in check
     // so instead of populating new array we'll just switch the elements w/ one another
     // and if an element moved right
@@ -42,7 +43,7 @@ const CountSort = (arr, len, exp) => {
         count[count_pos]--;
         addUp[count_pos]--;
     }
-}
+};
 
 const RadixSort = (arr, len) => {
     const max = GetMax(arr);
@@ -51,21 +52,27 @@ const RadixSort = (arr, len) => {
     for (let exp = 1; max/exp >= 1; exp *= 10) {
         CountSort(arr, len, exp)
     }
-}
+};
 
 const FindLPI = (arr) => {
     const len = arr.length;
     let i, n = 1;
+
+    // we use radix sort to sort the array in ascending manner
     RadixSort(arr, len);
 
+    // and find missing lowest positive integer by iterating over it
     for (i = 0; i < len; i++) {
         if (arr[i] <= 0) continue;
         if (n !== arr[i]) return n;
+        if (i !== len - 1 && arr[i] === arr[i+1]) continue;
         n++;
     }
-    return arr[len-1] + 1;
-}
+    return n;
+};
 
 
-test = [3, 4, -1, 1]
-console.log(FindLPI(test));
+const array = [3, 4, -1, 1];
+console.log(`Given array: [${array}]`);
+const lpi = FindLPI(array);
+console.log(`Lowest positive integer missing from the sequence is ${lpi}`);
