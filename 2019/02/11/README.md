@@ -23,3 +23,5 @@ BEGIN CountDecodeWays (msg)
                 ways *= 2
 END
 ```
+
+*P.S. I also implemented recursive DecodeMessage function that returns an array of all possible decodings of the message.*
