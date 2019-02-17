@@ -7,8 +7,10 @@ const AutoCompleteInit = () => {
 	const dictionary = {};
   	return (str, dict) => {
       if (str in dict) return dictionary[str];      
-      const reg = new RegExp(`^${str}`);      
-      return dict.filter(x => reg.test(x));
+      const reg = new RegExp(`^${str}`);
+      const res = dict.filter(x => reg.test(x));
+      dictionary[str] = res;
+      return res;
     }
 }
 const AutoComplete = AutoCompleteInit();
