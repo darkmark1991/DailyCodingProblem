@@ -17,9 +17,9 @@ const CountDecodeWays = (msg) => {
 // now let's actually implement the decoding part for the heck of it :D
 const LetterRange = (start, stop) => {
     const end = stop.charCodeAt(0);
-    const res = ['#'];
+    let res = '#';
     for (let c = start.charCodeAt(0); c <= end; c++)
-        res.push(String.fromCharCode(c));
+        res += String.fromCharCode(c);
     return res;
 };
 const letterMap = LetterRange('a', 'z');
