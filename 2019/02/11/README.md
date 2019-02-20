@@ -21,6 +21,8 @@ BEGIN CountDecodeWays (msg)
                 ways *= 1.5
             ELSE
                 ways *= 2
+    IF the num before last <= 2
+        ways *= 2
 END
 ```
 

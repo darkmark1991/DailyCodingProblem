@@ -10,7 +10,7 @@ const CountDecodeWays = (msg) => {
             else ways *= 2;
         }
     }
-    if (msg[len-2] < 2) ways *= 2;
+    if (msg[len-2] <= 2) ways *= 2;
     return ways;
 };
 
