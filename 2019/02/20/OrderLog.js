@@ -82,7 +82,7 @@ log.record(7);
 log.printLast();
 
 log.getLast().print();		// expected: 7
-log.getLast(2).print();		// expected: 6
+log.getLast(2).print();	// expected: 6
 log.getLast(10).print();	// expected: 1
 log.getLast(130).print();	// expected: 1
 
@@ -91,7 +91,7 @@ for (let i = 7; i < 23; i++)
 
 log.printLast();
 log.getLast().print();		// expected: 22
-log.getLast(2).print();		// expected: 21
+log.getLast(2).print();	// expected: 21
 log.getLast(10).print();	// expected: 13
 log.getLast(130).print();	// expected: 13
 
