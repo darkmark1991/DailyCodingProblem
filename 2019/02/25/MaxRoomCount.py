@@ -29,7 +29,7 @@ def MinRoomCount (arr):
         j = 0
         count = 1
         while (j < length):
-            if j != i and arr[j][0] < arr[i][0] < arr[j][1]:
+            if j != i and arr[j][0] <= arr[i][0] < arr[j][1]:
                 count += 1
             j += 1
         i += 1
@@ -39,17 +39,17 @@ def MinRoomCount (arr):
     
 
 times = [(30, 75), (0, 50), (60, 150)]
-count = MinRoomCount2(times)
+count = MinRoomCount(times)
 print("For the following schedule: ", times)
 print("Minimum number of rooms required is: ", count)
 # expected result: 2
 
 # time benchmarks below
-"""
+'''
 if __name__ == "__main__":
     import timeit
     setup = "from __main__ import MinRoomCount"
     print("MinRoomCount: ", timeit.timeit("MinRoomCount([(30, 75), (0, 50), (60, 150)])", setup=setup))
     setup = "from __main__ import MinRoomCountThatSucks"
     print("MinRoomCountThatSucks: ", timeit.timeit("MinRoomCountThatSucks([(30, 75), (0, 50), (60, 150)])", setup=setup))
-"""
+'''
