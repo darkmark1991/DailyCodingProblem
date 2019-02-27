@@ -15,6 +15,24 @@ const ReadSentence = (dict, str) => {
     return res.filter(w => !!w);
 };
 
+// slower method
+const ReadSentenceSlow = (dict, str) => {
+    const res = [];
+    const arr = [];
+    let tmp = str;
+    dict.forEach(word => {
+        arr.push(str.search(word));
+    });
+    arr
+        .filter((v,i) => arr.indexOf(v) === i)
+        .sort((a, b) => b - a)
+        .forEach(index => {
+            res.unshift(tmp.slice(index));
+            tmp = tmp.slice(0, index);
+        });
+    return res;
+};
+
 
 console.log(ReadSentence(['quick', 'brown', 'the', 'fox'], "thequickbrownfox"));
 // expected output: ["the", "quick", "brown", "fox"]
