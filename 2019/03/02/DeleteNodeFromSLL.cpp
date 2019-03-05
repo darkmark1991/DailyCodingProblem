@@ -61,7 +61,7 @@ int main() {
     insertAtEnd(&head, 101);
     cout<<"The original linked list is:\n";
     print(head);
-    cout<<"The linked list after deleting 10th, 4rd and #0 elements:\n";
+    cout<<"The linked list after deleting 10th, 4th and #0 elements:\n";
     deleteNode(&head, 10);
     deleteNode(&head, 3);
     deleteNode(&head, 0);
