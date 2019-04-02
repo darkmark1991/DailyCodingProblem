@@ -1,10 +1,12 @@
-
-### Daily Coding Problem #54
+### Daily Coding Problem #55
 ##### 2019-03-31
 ##### Problem:
 
-This problem was asked by Dropbox.
+This problem was asked by Microsoft.
 
-Sudoku is a puzzle where you're given a partially-filled 9 by 9 grid with digits. The objective is to fill the grid with the constraint that every row, column, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
+Implement a URL shortener with the following methods:
 
-Implement an efficient sudoku solver.
+* shorten(url), which shortens the url into a six-character alphanumeric string, such as zLg6wl.
+* restore(short), which expands the shortened string into the original url. If no such shortened string exists, return null.
+
+Hint: What if we enter the same URL twice?
