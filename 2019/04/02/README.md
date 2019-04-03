@@ -10,4 +10,4 @@ Given a string s and an integer k, break up the string into multiple lines such 
 
 You can assume that there are no spaces at the ends of the string and that there is exactly one space between each word.
 
-For example, given the string "the quick brown fox jumps over the lazy dog" and k = 10, you should return: `["the quick", "brown fox", "jumps over", "the lazy", "dog"]`. No string in the list has a length of more than 10.
+For example, given the string `"the quick brown fox jumps over the lazy dog"` and k = 10, you should return: `["the quick", "brown fox", "jumps over", "the lazy", "dog"]`. No string in the list has a length of more than 10.
