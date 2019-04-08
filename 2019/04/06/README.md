@@ -2,8 +2,6 @@
 ##### 2019-04-06
 ##### Problem:
 
-Good morning! Here's your coding interview problem for today.
-
 This problem was asked by Google.
 
 Implement integer exponentiation. That is, implement the `pow(x, y)` function, where x and y are integers and returns x^y.
