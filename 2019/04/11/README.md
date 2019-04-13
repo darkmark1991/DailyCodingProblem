@@ -1,40 +1,9 @@
-### Daily Coding Problem #65
-##### 2019-04-10
+### Daily Coding Problem #66
+##### 2019-04-11
 ##### Problem:
 
-This problem was asked by Amazon.
+This problem was asked by Square.
 
-Given a N by M matrix of numbers, print out the matrix in a clockwise spiral.
+Assume you have access to a function `toss_biased()` which returns 0 or 1 with a probability that's not 50-50 (but also not 0-100 or 100-0). You do not know the bias of the coin.
 
-For example, given the following matrix:
-
-```
-[[1,  2,  3,  4,  5],
- [6,  7,  8,  9,  10],
- [11, 12, 13, 14, 15],
- [16, 17, 18, 19, 20]]
-```
-You should print out the following:
-
-```
-1
-2
-3
-4
-5
-10
-15
-20
-19
-18
-17
-16
-11
-6
-7
-8
-9
-14
-13
-12
-```
+Write a function to simulate an unbiased coin toss.
