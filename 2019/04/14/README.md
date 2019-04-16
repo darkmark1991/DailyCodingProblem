@@ -1,11 +1,11 @@
-### Daily Coding Problem #69
-##### 2019-04-14
+### Daily Coding Problem #70
+##### 2019-04-15
 ##### Problem:
 
-This problem was asked by Facebook.
+This problem was asked by Microsoft.
 
-Given a list of integers, return the largest product that can be made by multiplying any three integers.
+A number is considered perfect if its digits sum up to exactly 10.
 
-For example, if the list is `[-10, -10, 5, 2]`, we should return 500, since that's -10 * -10 * 5.
+Given a positive integer n, return the n-th perfect number.
 
-You can assume the list has at least three integers.
+For example, given 1, you should return 19. Given 2, you should return 28.
