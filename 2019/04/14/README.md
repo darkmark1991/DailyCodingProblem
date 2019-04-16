@@ -1,11 +1,11 @@
-### Daily Coding Problem #70
-##### 2019-04-15
+### Daily Coding Problem #69
+##### 2019-04-14
 ##### Problem:
 
-This problem was asked by Microsoft.
+This problem was asked by Facebook.
 
-A number is considered perfect if its digits sum up to exactly 10.
+Given a list of integers, return the largest product that can be made by multiplying any three integers.
 
-Given a positive integer n, return the n-th perfect number.
+For example, if the list is `[-10, -10, 5, 2]`, we should return 500, since that's -10 * -10 * 5.
 
-For example, given 1, you should return 19. Given 2, you should return 28.
+You can assume the list has at least three integers.
